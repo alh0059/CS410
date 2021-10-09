@@ -2,58 +2,40 @@ package kwic;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		
 	FileHelper fileHelper = new FileHelper();
 		
 		
 	// Initializing data structures in order to create the KWIC table.
-		
-	String words[] = new String[109];          // Array of words in the chapter
-	String precedingWords[] = new String[109]; // Array of words preceding every word in the chapter.
-	String followingWords[] = new String[109]; // Array of words succeeding every word in the chapter.
-	int chapterCount[] = new int[109];		   // Array of integers denoting the chapter for every word. 
-	int wordCount[] = new int[109] ;		   // Array of integers denoting the word counter/location of every word. 
-		
+	final int chapterSize = 555;	// The number of words inside the chapter, used to initialize memory space for storing each word.
 	
-	// In the String variables below, Chapter 2 of Egil's Saga is split in into Strings to be passed into the KWIC.
-	// I should have used more inspiring names for these, but they're only used once to get the words into the array.
+	String words[] = new String[chapterSize];          // Array of words in the chapter
+	String precedingWords[] = new String[chapterSize]; // Array of words preceding every word in the chapter.
+	String succedingWords[] = new String[chapterSize]; // Array of words succeeding every word in the chapter.
+	int chapterCount[] = new int[chapterSize];		   // Array of integers denoting the chapter for every word. 
+	int wordCount[] = new int[chapterSize] ;		   // Array of integers denoting the word counter/location of every word. 
 		
-	String sentence1 = "Audbjorn was then king over the Firthfolk; there was an earl of his named Hroald, whose son was";
-	String sentence2 = "Thorir. Atli the Slim was then an earl, he dwelt at Gaula; he had sons - Hallstein, Holmstein, and";
-	String sentence3 = "Herstein; and a daughter, Solveig the Fair. It happened one autumn that much people were gathered at";
-	String sentence4 = "Gaula for a sacrificial feast, then saw Aulvir Hnuf Solveig and courted her; he afterwards asked her to";
-	String sentence5 = "wife. But the earl thought him an unequal match and would not give her. Whereupon Aulvir composed";
-	String sentence6 = "many love-songs, and thought so much of Solveig that he left freebooting, but Thorolf and Eyvind";
-	String sentence7 = "Lambi kept it on.";
-	
 	// Here, I set the chapter # and word count # for the KWIC.
 	for(int i = 0; i < words.length; i++) {
 		wordCount[i] = i; 		// Word count is i, and will change with primary key when sorting.
 		chapterCount[i] = 2;	// The chapter is 2, for all words in the KWIC.
 	}
 	
-	// Splitting sentences from above into words.
-	splitToWords(sentence1, words);
-	splitToWords(sentence2, words);
-	splitToWords(sentence3, words);
-	splitToWords(sentence4, words);
-	splitToWords(sentence5, words);
-	splitToWords(sentence6, words);
-	splitToWords(sentence7, words);
+
+	fileHelper.readFromCSV(words); // Reading the chapter from the text file. And placing each word into the words array for Strings.
 	
 	// Determining proceeding and succeeding words, and placing them in the appropriate output arrays.
-	
 	getPreceding(words, precedingWords); // Getting the 5 preceding words for every word in the chapter.
-	getProceding(words, followingWords); // Getting the 5 succeeding words for every word in the chapter.
+	getProceding(words, succedingWords); // Getting the 5 succeeding words for every word in the chapter.
 	
-	printTable(words, chapterCount, wordCount, precedingWords, followingWords);	// Printing the KWIC
-	fileHelper.printToCSV(words, chapterCount, wordCount, precedingWords, followingWords);	// Printing KWIC to the CSV file.
+	//printTable(words, chapterCount, wordCount, precedingWords, followingWords);	// Printing the KWIC
+	//fileHelper.printToCSV(words, chapterCount, wordCount, precedingWords, followingWords);	// Printing KWIC to the CSV file.
 	
-	sortStrings(words, chapterCount, wordCount, precedingWords, followingWords);
+	sortStrings(words, chapterCount, wordCount, precedingWords, succedingWords);
 	
-	printTable(words, chapterCount, wordCount, precedingWords, followingWords);	// Printing the KWIC
-	fileHelper.printToCSV(words, chapterCount, wordCount, precedingWords, followingWords);	// Printing KWIC to the CSV file.
+	printTable(words, chapterCount, wordCount, precedingWords, succedingWords);	// Printing the KWIC
+	fileHelper.printToCSV(words, chapterCount, wordCount, precedingWords, succedingWords);	// Printing KWIC to the CSV file.
 	
 	}
 	
@@ -106,7 +88,7 @@ public class Main {
 	
 	public static void printTable(String[] array, int[] chapters, int[] wordCount, String[] preceding, String[] following) {
 		for(int i = 0; i < array.length; i++) 
-			System.out.printf("%12s | %d | %3d | %38s | %38s | %n",  array[i], chapters[i], wordCount[i], preceding[i], following[i]);	
+			System.out.printf("%13s | %d | %3d | %41s | %41s | %n",  array[i], chapters[i], wordCount[i], preceding[i], following[i]);	
 	}
 	
 	
@@ -119,10 +101,10 @@ public class Main {
                 if (key[i].compareTo( key[j]) > 0) {
                     // swapping
                 	swapStrings(key, i, j);
-//                	swapInts(chapters, i, j);
-//                	swapInts(wordCount, i, j);
-//                	swapStrings(preceding, i, j);
-//                	swapStrings(following, i, j);
+                	swapInts(chapters, i, j);
+                	swapInts(wordCount, i, j);
+                	swapStrings(preceding, i, j);
+                	swapStrings(following, i, j);
                 }
             }//END FIRST LOOP
         }// END SECOND LOOP
