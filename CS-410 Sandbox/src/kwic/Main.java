@@ -32,7 +32,7 @@ public class Main {
 	//printTable(words, chapterCount, wordCount, precedingWords, followingWords);	// Printing the KWIC
 	//fileHelper.printToCSV(words, chapterCount, wordCount, precedingWords, followingWords);	// Printing KWIC to the CSV file.
 	
-	kwicHelper.sortStrings(words, chapterCount, wordCount, precedingWords, succedingWords);
+	kwicHelper.sortWords(words, chapterCount, wordCount, precedingWords, succedingWords);
 	
 	kwicHelper.printTable(words, chapterCount, wordCount, precedingWords, succedingWords);	// Printing the KWIC
 	fileHelper.printToCSV(words, chapterCount, wordCount, precedingWords, succedingWords);	// Printing KWIC to the CSV file.
