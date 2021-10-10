@@ -9,7 +9,7 @@ public class HelperFunctions {
 				String temp= "";
 				j = i - 1;
 				while(j >= 0 && i - j <= 5) {
-					temp = temp + inputArray[j]+" ";
+					temp = inputArray[j]+" " +temp;
 					j--;
 				}
 				outputArray[i] = temp;
@@ -65,5 +65,6 @@ public class HelperFunctions {
 		array[a] = array[b];
 		array[b] = temp;
 	}
+	
 	
 } // END HelperFunctions
