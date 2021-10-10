@@ -13,10 +13,11 @@ public class FileHelper {
 
 	public void printToCSV(String[] array, int[] chapters, int[] wordCount, String[] preceding, String[] following) {
 		
-		File file = new File("index01.csv");
+		File file = new File("index01.csv"); //Creating CSV file with name from the assignment hand out.
 		
 		try {
 			if(file.createNewFile()) 
+				// Checking if file already exist.
 				System.out.println("File created");
 			else 
 				System.out.println("File exists");	
@@ -29,10 +30,12 @@ public class FileHelper {
             FileWriter output = new FileWriter(file);
             CSVWriter write = new CSVWriter(output);
 
-            // Header column value
+            // Setting KWIC header names.
             String[] header = { "Word", "Chapter #", "Word #", "Preceeding Word", "Succeeding Word" };
             write.writeNext(header);
+            
             for(int i = 0; i < array.length; i++) {
+            	 // Adding all rows and columns to the CSV file.
             	 String[] data = { array[i], Integer.toString(chapters[i]), Integer.toString(wordCount[i]), preceding[i], following[i] };
             	 write.writeNext(data);
             }
@@ -46,29 +49,28 @@ public class FileHelper {
 	
 	
 	public void readFromCSV(String[] outputArray) throws Exception {
-		File file = new File("chapter4.txt");
-		BufferedReader br = null;
-		// Creating an object of BuffferedReader class
+		
+		File file = new File("chapter4.txt");	// Creating file stream for the input file.
+		BufferedReader br = null;				// Creating an object of BuffferedReader class
+		
         try {
 			br = new BufferedReader(new FileReader(file));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-        // Declaring a string variable
-        String string;
-        // Consition holds true till
-        // there is character in a string
+        
+        String string;	// Declaring a temporary string variable for gathering text.
+        
+        // Reading to the end of the input file.
         while ((string = br.readLine()) != null) {
-        	splitToWords(string, outputArray);
+        	splitToWords(string, outputArray); 		// Splitting the input string into words 
+        											// and appending to the output array for the KWIC dictionary.
         }
- 
-            // Print the string
-            System.out.println(string);
 	}
 	
 public static void splitToWords(String input, String[] array) {
 		
-		int k = 0; // K integer is for the last empty spot in the output array.
+		int k = 0; // K is the index for the last empty spot in the output array.
 		
 		// Loop through output array and adjust K to the first empty spot for adding new words.
 		for(int i = 0; i < array.length; i++) 
