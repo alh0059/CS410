@@ -11,8 +11,6 @@ import com.opencsv.CSVWriter;
 
 public class FileHelper {
 
-	
-	
 	public void printToCSV(String[] array, int[] chapters, int[] wordCount, String[] preceding, String[] following) {
 		
 		File file = new File("index01.csv");
