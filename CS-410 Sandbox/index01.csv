@@ -1,4 +1,4 @@
-"Word","Chapter #","Word #","Preceeding Word","Succeeding Word"
+"Word","Chapter #","Word #","5 Preceeding Words","5 Succeeding Words"
 "King","4","0","","Audbjorn went with his forces "
 "Audbjorn","4","1","King ","went with his forces northwards "
 "went","4","2","Audbjorn King ","with his forces northwards to "

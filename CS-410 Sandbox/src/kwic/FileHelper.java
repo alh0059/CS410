@@ -31,7 +31,7 @@ public class FileHelper {
             CSVWriter write = new CSVWriter(output);
 
             // Setting KWIC header names.
-            String[] header = { "Word", "Chapter #", "Word #", "Preceeding Word", "Succeeding Word" };
+            String[] header = { "Word", "Chapter #", "Word #", "5 Preceeding Words", "5 Succeeding Words" };
             write.writeNext(header);
             
             for(int i = 0; i < array.length; i++) {
