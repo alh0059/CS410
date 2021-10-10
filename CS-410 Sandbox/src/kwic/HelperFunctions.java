@@ -41,7 +41,7 @@ public class HelperFunctions {
 		for (int i = 0; i < key.length; i++) {
             for (int j = i + 1; j < key.length; j++) {
                 
-                if (key[i].compareTo( key[j]) > 0) {
+                if (key[i].toLowerCase().compareTo(key[j].toLowerCase()) > 0) {
                     // Swapping every column in the KWIC, based on the primary key. 
                 	// For different primary key, sequence parameters in a different order when calling the function.
                 	swapStrings(key, i, j);
