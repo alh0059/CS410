@@ -4,7 +4,6 @@ I have created my key word in context from Chapter 4 of the Iclandic Saga.
 
 My KWIC was programmed in Java and utilizes all of it's own classes except for file input and output for the comma separated values.
  
-
 - I recommend launching the program in Eclipse IDE or your preferred development environment that supports Java.
 - Once you have the project folder inside of your IDE workspace.
 
