@@ -11,9 +11,9 @@ import com.opencsv.CSVWriter;
 
 public class FileHelper {
 
-	public void printToCSV(String[] array, int[] chapters, int[] wordCount, String[] preceding, String[] following) {
+	public void printToCSV(String filePath ,String[] array, int[] chapters, int[] wordCount, String[] preceding, String[] following) {
 		
-		File file = new File("index01.csv"); //Creating CSV file with name from the assignment hand out.
+		File file = new File(filePath); //Creating CSV file with name from the assignment hand out.
 		
 		try {
 			if(file.createNewFile()) 

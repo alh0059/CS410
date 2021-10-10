@@ -30,12 +30,12 @@ public class Main {
 	kwicHelper.getProceding(words, succedingWords); // Getting the 5 succeeding words for every word in the chapter.
 	
 	//printTable(words, chapterCount, wordCount, precedingWords, followingWords);	// Printing the KWIC
-	//fileHelper.printToCSV(words, chapterCount, wordCount, precedingWords, followingWords);	// Printing KWIC to the CSV file.
+	fileHelper.printToCSV("index01.csv",words, chapterCount, wordCount, precedingWords, succedingWords);	// Printing KWIC index to the appropriate CSV file.
 	
 	kwicHelper.sortWords(words, chapterCount, wordCount, precedingWords, succedingWords);
 	
 	kwicHelper.printTable(words, chapterCount, wordCount, precedingWords, succedingWords);	// Printing the KWIC
-	fileHelper.printToCSV(words, chapterCount, wordCount, precedingWords, succedingWords);	// Printing KWIC to the CSV file.
+	fileHelper.printToCSV("indexsorted.csv",words, chapterCount, wordCount, precedingWords, succedingWords);	// Printing the sorted KWIC to the appropriate CSV file.
 	
 	}
 	
