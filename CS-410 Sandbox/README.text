@@ -1,24 +1,22 @@
 Hello Dr. Vanscoy.
 
-I have created my Key Word In Context for Chapter 4 of Iclandic Saga. 
+I have created my key word in context from Chapter 4 of the Iclandic Saga. 
 
-My key word in context was programmed in Java and utilizes all of my own classes except for file input and output for the comma separated values.
+My KWIC was programmed in Java and utilizes all of it's own classes except for file input and output for the comma separated values.
  
-	- I recommend launching my program in Eclipse IDE or your preferred integrated development environment..
-	- Once you have the project folder inside of the IDE workspace.
-	- Make sure that the openCSV library will compile properly by verifying the openCSV.jar file is in the projects class path.
-		* If it isn't then you can add it by right clicking on the project and selecting build path.
-		* Then click Libraries and select class path. Once class path is selected, click add external jars.
-		* From there, add the jar for openCSV that was in the project files. Or you can find a download here (http://opencsv.sourceforge.net/).
-				_ This is a major step in launching the program. I apologize if something is not working on your end and my instructions are unclear.
-				_ If needed, I am more than willing to meet in person or on Zoom in order to help with any project setup while grading.
-
-The rest of the functions and libraries should already be imported and allow the KWIC to work from here.
+	- I recommend launching the program in Eclipse IDE or your preferred integrated development environment that supports Java.
+	- Once you have the project folder inside of your IDE workspace.
+	- Make sure that the openCSV library will compile properly by verifying that the 'openCSV.jar' file is in the project's class-path.
+		* If the jar file is missing, you can add it by right clicking on the project's root folder and selecting build path.
+		* From there, click 'libraries' and select class-path. Once class-path is selected, click 'add external jars' and locate openCSV.jar.
+		* If the jar in the current project folder doesn't work. You can find a download here (http://opencsv.sourceforge.net/).
+			
+The rest of the functions and libraries are already imported and the KWIC should be ready to launch.
 
 WHEN READY TO LAUNCH
 
-1.) Navigate into the KWIC package, and 
-2.) Locate the file named MAIN.java (This is the main driver for my KWIC program.)
-3.) Launch the MAIN.java file as a java application in eclipse IDE, or you're preferred environment.
-4.) Once the program has run. 
-	- One may need to refresh project workspace in order to locate CSV files if the file names did not previously exists on the machine. 
+1.) Navigate into the KWIC package in the 'src' folder.
+2.) Locate the file named MAIN.java (This is the main driver for the KWIC program.)
+3.) Launch the MAIN.java file as a java application in eclipse IDE, or your preferred environment.
+4.) Once the program has terminated. 
+	- You may need to refresh the project workspace in order to locate any CSV files that did not previously exists on the machine. 
