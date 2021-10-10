@@ -7,14 +7,12 @@ My KWIC was programmed in Java and utilizes all of it's own classes except for f
 - I recommend launching the program in Eclipse IDE or your preferred development environment that supports Java.
 - Once you have the project folder inside of your IDE workspace.
 
-1.) Make sure you have the text at the root level named 'chapter4.txt'. The text from this file is parsed into words using the library from the next step (2).
+1.) Make sure you have the text file at the root level named 'chapter4.txt'. The text from this file is parsed into words using the library from the next step (2).
 
 2.) Make sure that the openCSV library is imported properly by verifying that the 'openCSV.jar' file is in the project's class-path.
 	* If the .jar file is missing, you can add it by right clicking on the project's root folder and selecting 'configure build path'.
 	* From there, click 'libraries' and select 'class-path'. Once 'class-path' is selected, click 'add external jars' and locate openCSV.jar.
 	* If the jar in the current project folder doesn't work. You can find a new download here (http://opencsv.sourceforge.net/).
-	
-	
 			
 The rest of the functions and libraries are already imported and the KWIC should be ready to launch.
 
